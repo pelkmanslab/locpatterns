@@ -1,0 +1,60 @@
+
+% Example of setting file for finding localization patternts in single cell data
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%   The setting file parameters are as follows:
+%       Examples when possible are given withparameters used by Battich et
+%       al., 2013
+%       - structSettings.PathToData ---> Path to file containing cell data.
+%           e.g. C:\Path\To\Data\Data.mat
+%       - structSettings.OutputFolder ---> Full path to output folder
+%           e.g. C:\Output\folder\
+%       - structSettings.MinClusterNumber ---> Minimal number of clusters.
+%           e.g. 2
+%       - structSettings.MaxClusterNumber ---> Maximal number of clusters.
+%           e.g. 50
+%       - structSettings.FirstRandomSampling  ---> Number of cells to be
+%           sampled at random prior to calculation of data density. This is
+%           used for data downsampling to avoid memory usage problems when
+%           handling large number of cells. The number will depend on the 
+%           memory availability of the current system. e.g. 70000
+%       - structSettings.FeatureIndex  ---> Index of features in data set
+%           to be used to generate the pattern classification. 
+%           e.g. [1:5 7:10] 
+%       - structSettings.NumberOfBins ---> Number of bins to divide the 
+%           randomly sampled cells depending on estimation of the data
+%	    density. This is done to sample cells representing all 
+%	    phenotypes given by the features analyzed
+%       - structSettings.CellSamplingsPerBin ---> Number of cells sampled
+%           per bin
+%	Note: the number of cells sampled will be approximatly 
+%	    structSettings.NumberOfBins * structSettings.CellSamplingsPerBin 
+%
+% Developed in University of Zurich, Institute of Molecular Life Sciences
+% Copyright 2013.
+%
+% Authors:
+%   Nico Battich
+%   Thomas Stoeger
+%   Lucas Pelkmans
+%
+% Website: https://www.pelkmanslab.org/
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Path to example data
+structSettings.PathToData = 'S:\Path\To\Example\Data.mat'; 
+
+% Path to output folder
+structSettings.OutputFolder = 'S:\Path\To\Output\Folder';
+
+
+
+structSettings.MinClusterNumber = 2; 
+structSettings.MaxClusterNumber = 9;
+structSettings.FirstRandomSampling = 5000;
+structSettings.FeatureIndex = [1:32];
+structSettings.NumberOfBins = 20;
+structSettings.CellSamplingsPerBin = 100
